@@ -1,0 +1,61 @@
+{
+  "name": "pi-kagi-api",
+  "version": "0.0.1",
+  "description": "Pi extension exposing Kagi Search and Extract API tools.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "node scripts/build.mjs",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "prepack": "pnpm build",
+    "test": "vitest run",
+    "smoke:dist": "pnpm build && node scripts/import-smoke.js",
+    "pack:dry-run": "pnpm pack --dry-run",
+    "validate": "pnpm check && pnpm test && pnpm run smoke:dist && pnpm run pack:dry-run",
+    "test:live": "pnpm build && node scripts/live-smoke.js"
+  },
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "kagi",
+    "search",
+    "extract"
+  ],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@11.2.2",
+  "engines": {
+    "node": ">=22"
+  },
+  "pi": {
+    "extensions": [
+      "./dist/index.js"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": ">=0.75.4 <1",
+    "@earendil-works/pi-coding-agent": ">=0.75.4 <1",
+    "@earendil-works/pi-tui": ">=0.75.4 <1",
+    "typebox": ">=1.1.38 <2"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "^0.75.4",
+    "@earendil-works/pi-coding-agent": "^0.75.4",
+    "@earendil-works/pi-tui": "^0.75.4",
+    "@kagi/api": "github:kagisearch/kagi-openapi-typescript#23428601caebb4bc91a489ce6dc6c3baf433526d",
+    "@types/node": "^25.9.1",
+    "esbuild": "^0.28.0",
+    "typebox": "^1.1.38",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.7"
+  }
+}
