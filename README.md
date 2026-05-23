@@ -19,6 +19,20 @@ Set the API key before launching pi or running `pnpm test:live`:
 export KAGI_API_KEY="..."
 ```
 
+## Installation
+
+_The npm registry package is the recommended install source for normal use because it contains the built extension bundle._
+
+```sh
+# From NPM
+$ pi install npm:@christopherbecker/pi-kagi-api
+$ pi install npm:@christopherbecker/pi-kagi-api@0.1.0
+
+# From Github
+pi install git:github.com/cbeck527/pi-kagi-api@v0.1.0
+pi install git:github.com/cbeck527/pi-kagi-api
+```
+
 ## Development
 
 Install dependencies, then run the offline validation checks:
