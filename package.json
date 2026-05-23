@@ -1,6 +1,6 @@
 {
-  "name": "pi-kagi-api",
-  "version": "0.0.1",
+  "name": "@christopherbecker/pi-kagi-api",
+  "version": "0.1.0",
   "description": "Pi extension exposing Kagi Search and Extract API tools.",
   "type": "module",
   "main": "./dist/index.js",
@@ -30,7 +30,15 @@
     "search",
     "extract"
   ],
-  "author": "",
+  "author": "Chris Becker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbeck527/pi-kagi-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cbeck527/pi-kagi-api/issues"
+  },
+  "homepage": "https://github.com/cbeck527/pi-kagi-api#readme",
   "license": "MIT",
   "packageManager": "pnpm@11.2.2",
   "engines": {
